@@ -6,6 +6,7 @@ class CadastrosController < ApplicationController
   # GET /cadastros.json
   def index
     @cadastros = Cadastro.all
+    session[:logado] = ! session[:logado] 
   end
 
   # GET /cadastros/1
@@ -74,7 +75,7 @@ class CadastrosController < ApplicationController
     end
 
     def logado?
-      rand.round.zero?
+      session[:logado].present?
     end
 
     def acesso_restrito!
