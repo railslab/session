@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def acesso_restrito!
-    render text: 'Acesso Negado' unless logado?
+    redirect_to login_path unless logado?
   end  
 end
