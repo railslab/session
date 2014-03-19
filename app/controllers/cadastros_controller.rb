@@ -70,6 +70,6 @@ class CadastrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cadastro_params
-      params.require(:cadastro).permit(:nome, :email, :password_digest, :endereco, :admin, :data_nasc)
+      params.require(:cadastro).permit(:nome, :email, :password, :password_confirmation, :endereco, :admin, :data_nasc)
     end
 end
