@@ -19,6 +19,7 @@ class CadastrosController < ApplicationController
 
   # GET /cadastros/1/edit
   def edit
+    render text: 'Acesso Negado' unless logado?
   end
 
   # POST /cadastros
@@ -70,5 +71,9 @@ class CadastrosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cadastro_params
       params.require(:cadastro).permit(:nome, :email, :password_digest, :endereco, :admin, :data_nasc)
+    end
+
+    def logado?
+      false
     end
 end
