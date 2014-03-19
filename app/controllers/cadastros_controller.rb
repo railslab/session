@@ -10,6 +10,7 @@ class CadastrosController < ApplicationController
   # GET /cadastros/1
   # GET /cadastros/1.json
   def show
+    render text: 'Acesso Negado' unless logado?
   end
 
   # GET /cadastros/new
