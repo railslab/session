@@ -9,6 +9,15 @@
 </head>
 <body data-no-turbolink>
 
+<% if usuario_logado %>
+  <div class="pull-left">
+    Bem Vindo
+    <strong>
+      <%= usuario_logado.email %>
+    </strong>
+  </div>
+<% end %>
+
 <div class="btn-group pull-right">
   <%= link_to_unless(logado?, 'login', login_path, class: 'btn btn-primary'){} %>
   <%= link_to_if(logado?, 'logout', logout_path, class: 'btn btn-danger'){} %>
