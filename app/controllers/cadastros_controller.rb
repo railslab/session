@@ -72,12 +72,4 @@ class CadastrosController < ApplicationController
     def cadastro_params
       params.require(:cadastro).permit(:nome, :email, :password_digest, :endereco, :admin, :data_nasc)
     end
-
-    def logado?
-      session[:logado].present?
-    end
-
-    def acesso_restrito!
-      render text: 'Acesso Negado' unless logado?
-    end
 end
