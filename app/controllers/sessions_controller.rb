@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 	def create
-		if params[:password] == '123'
+		cadastro = Cadastro.find_by_email(params[:email])
+		if cadastro && cadastro.authenticate(params[:password])
 			session[:logado] = true
 			redirect_to root_path
 		else

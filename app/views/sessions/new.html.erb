@@ -1,4 +1,6 @@
 <%= form_tag session_path, class: 'form-inline' do %>
+	<%= label_tag 'email' %>
+	<%= email_field_tag 'email', '', class: 'form-control', required: true %>
 	<%= label_tag 'senha' %>
 	<%= password_field_tag 'password', '', class: 'form-control', required: true %>
 	<%= submit_tag 'entrar', class: 'btn btn-success' %>
