@@ -10,7 +10,7 @@ class CadastrosController < ApplicationController
   # GET /cadastros/1
   # GET /cadastros/1.json
   def show
-    render text: 'Acesso Negado' unless logado?
+    acesso_restrito!
   end
 
   # GET /cadastros/new
@@ -20,7 +20,7 @@ class CadastrosController < ApplicationController
 
   # GET /cadastros/1/edit
   def edit
-    render text: 'Acesso Negado' unless logado?
+    acesso_restrito!
   end
 
   # POST /cadastros
@@ -76,5 +76,9 @@ class CadastrosController < ApplicationController
 
     def logado?
       false
+    end
+
+    def acesso_restrito!
+      render text: 'Acesso Negado' unless logado?
     end
 end
