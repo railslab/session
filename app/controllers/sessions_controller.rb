@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 	def create
-		session[:logado] = true
-		redirect_to root_path
+		if params[:password] == '123'
+			session[:logado] = true
+			redirect_to root_path
+		else
+			render :new
+		end
 	end
 
 	def destroy
