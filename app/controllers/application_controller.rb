@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :logado?
 
   def logado?
-    session[:logado].present?
+    session[:id].present?
   end
 
   def acesso_restrito!
