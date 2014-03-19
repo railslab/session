@@ -1,0 +1,37 @@
+<h1>Listing cadastros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Password digest</th>
+      <th>Endereco</th>
+      <th>Admin</th>
+      <th>Data nasc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cadastros.each do |cadastro| %>
+      <tr>
+        <td><%= cadastro.nome %></td>
+        <td><%= cadastro.email %></td>
+        <td><%= cadastro.password_digest %></td>
+        <td><%= cadastro.endereco %></td>
+        <td><%= cadastro.admin %></td>
+        <td><%= cadastro.data_nasc %></td>
+        <td><%= link_to 'Show', cadastro %></td>
+        <td><%= link_to 'Edit', edit_cadastro_path(cadastro) %></td>
+        <td><%= link_to 'Destroy', cadastro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cadastro', new_cadastro_path %>

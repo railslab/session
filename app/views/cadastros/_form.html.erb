@@ -1,0 +1,41 @@
+<%= form_for(@cadastro) do |f| %>
+  <% if @cadastro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+
+      <ul>
+      <% @cadastro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password_digest %><br>
+    <%= f.text_field :password_digest %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br>
+    <%= f.text_area :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :admin %><br>
+    <%= f.check_box :admin %>
+  </div>
+  <div class="field">
+    <%= f.label :data_nasc %><br>
+    <%= f.date_select :data_nasc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
