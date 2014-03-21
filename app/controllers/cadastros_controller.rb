@@ -1,6 +1,6 @@
 class CadastrosController < ApplicationController
+  before_action :acesso_restrito!, only: [:show, :edit, :destroy]
   before_action :set_cadastro, only: [:show, :edit, :update, :destroy]
-  before_action :acesso_restrito!, only: [:show, :edit]
 
   # GET /cadastros
   # GET /cadastros.json

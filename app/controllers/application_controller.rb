@@ -10,10 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def acesso_restrito!
-    unless logado?
-      redirect_to login_path
-      return false
-    end
+    redirect_to login_path unless logado?
   end
 
   def session_id
